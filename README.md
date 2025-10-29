@@ -1,5 +1,5 @@
 
- AlgoLens
+ **AlgoLens**
 
  A Smart DSA Analyzer and Recommender for Developers
 
