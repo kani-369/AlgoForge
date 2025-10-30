@@ -3,7 +3,7 @@
 
  A Smart DSA Analyzer and Recommender for Developers
 
-**AlgoForge** is an AI-assisted **VS Code extension** built in **Python**, designed to help programmers and learners choose the *most efficient data structure or algorithm* for their use case.
+**AlgoForge** is an AI-assisted  **extension** built in **Python**, designed to help programmers and learners choose the *most efficient data structure or algorithm* for their use case.
 It analyzes the given operations (like insertions, deletions, searches, and range queries) and automatically tests performance across multiple DSA modules — such as arrays, stacks, queues, trees, graphs, dynamic programming, and more.
 
 ---
