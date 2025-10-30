@@ -3,9 +3,9 @@
 
 ---
 
- AlgoLens Contribution Guide
+ AlgoForge Contribution Guide
 
-Welcome to AlgoLens — a VS Code–powered DSA analyzer and recommender built in Python.
+Welcome to Algoforge — a VS Code–powered DSA analyzer and recommender built in Python.
 This guide ensures all team members follow a consistent structure so the whole system runs smoothly.
 
 
@@ -13,7 +13,7 @@ This guide ensures all team members follow a consistent structure so the whole s
 
  Project Folder Structure
 
-algolens/
+algoforge/
  ┣ 📄 main.py                 ← main backend controller
  ┣ 📁 modules/                ← all DSA modules here
  ┃ ┣ 📄 arrays.py
@@ -38,7 +38,7 @@ algolens/
 
 1️⃣ Follow the folder structure exactly
 
-All modules must stay inside algolens/modules/.
+All modules must stay inside algoforge/modules/.
 
 File names must match the topic (e.g., arrays.py, trees.py, etc.).
 
