@@ -1,7 +1,5 @@
 """
 ====================================================
-🧩 AlgoForge Module: Divide and Conquer
-====================================================
 Implements classic divide-and-conquer algorithms:
 - Merge Sort
 - Quick Sort
@@ -21,7 +19,7 @@ from typing import List, Tuple
 
 
 # -----------------------------------------------------------
-# 🔹 MERGE SORT
+#  MERGE SORT
 # -----------------------------------------------------------
 
 def merge_sort(arr: List[int]) -> List[int]:
@@ -53,7 +51,7 @@ def _merge(left: List[int], right: List[int]) -> List[int]:
 
 
 # -----------------------------------------------------------
-# 🔹 QUICK SORT
+#  QUICK SORT
 # -----------------------------------------------------------
 
 def quick_sort(arr: List[int]) -> List[int]:
@@ -70,7 +68,7 @@ def quick_sort(arr: List[int]) -> List[int]:
 
 
 # -----------------------------------------------------------
-# 🔹 BINARY SEARCH
+#  BINARY SEARCH
 # -----------------------------------------------------------
 
 def binary_search(arr: List[int], target: int) -> int:
@@ -91,7 +89,7 @@ def binary_search(arr: List[int], target: int) -> int:
 
 
 # -----------------------------------------------------------
-# 🔹 COUNT INVERSIONS
+#  COUNT INVERSIONS
 # -----------------------------------------------------------
 
 def count_inversions(arr: List[int]) -> int:
@@ -134,7 +132,7 @@ def count_inversions(arr: List[int]) -> int:
 
 
 # -----------------------------------------------------------
-# 🔹 CLOSEST PAIR OF POINTS (2D)
+#  CLOSEST PAIR OF POINTS (2D)
 # -----------------------------------------------------------
 
 def closest_pair(points: List[Tuple[int, int]]) -> float:
@@ -185,7 +183,7 @@ def closest_pair(points: List[Tuple[int, int]]) -> float:
 
 
 # -----------------------------------------------------------
-# 🔹 STRASSEN'S MATRIX MULTIPLICATION
+#  STRASSEN'S MATRIX MULTIPLICATION
 # -----------------------------------------------------------
 
 def _next_power_of_two(n: int) -> int:
@@ -297,7 +295,7 @@ def strassen_multiply(A: List[List[float]], B: List[List[float]], cutoff: int = 
 
 
 # -----------------------------------------------------------
-# 🧪 BENCHMARK WORKLOAD
+#  BENCHMARK WORKLOAD
 # -----------------------------------------------------------
 
 def run_divide_conquer_operations(n: int = 10000):
@@ -319,11 +317,52 @@ def run_divide_conquer_operations(n: int = 10000):
 
     return len(sorted_arr)
 
+#------------------------------------------------------------
+# Manual Test Cases
+
+def _manual_tests():
+    print("\n=== Manual Tests ===")
+
+    # Test Merge Sort
+    arr = [5, 3, 8, 2, 1]
+    print("Merge Sort:", merge_sort(arr.copy()))
+
+    # Test Quick Sort
+    print("Quick Sort:", quick_sort(arr.copy()))
+
+    # Test Binary Search
+    sorted_arr = merge_sort(arr.copy())
+    print("Binary Search (find 8):", binary_search(sorted_arr, 8))
+
+    # Test Inversions
+    arr2 = [3, 2, 1]
+    print("Inversions in [3,2,1]:", count_inversions(arr2.copy()))
+
+    # Test Closest Pair
+    points = [(0,0), (3,4), (5,1), (2,1)]
+    print("Closest Pair Distance:", closest_pair(points))
+
+    # Test Strassen
+    A = [[1,2],[3,4]]
+    B = [[5,6],[7,8]]
+    print("Strassen Multiply:", strassen_multiply(A, B))
+    print("====================\n")
+
+
+
+
+
+
+
+
+
+
 
 # -----------------------------------------------------------
 # Standalone Test Runner
-# -----------------------------------------------------------
+
 
 if __name__ == "__main__":
+    _manual_tests()
     print("Running Divide and Conquer module test...")
     print("Workload Output:", run_divide_conquer_operations(2000))
