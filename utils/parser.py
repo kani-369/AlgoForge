@@ -50,27 +50,55 @@ MODULE_KEYWORDS = {
     ]
 }
 
+MODULE_PRIORITY = [
+    "graphs",
+    "dynamic_programming",
+    "greedy",
+    "divide_conquer",
+    "sorting",
+    "hashing",
+    "trees",
+    "linked_list",
+    "stacks_queues",
+    "arrays"
+]
 
+import difflib
 
-
+def fuzzy_match(word: str, text: str, threshold: float = 0.75) -> bool:
+    """
+    Returns True if 'word' is similar to any substring in 'text'
+    using fuzzy matching.
+    """
+    words = text.split()
+    for w in words:
+        similarity = difflib.SequenceMatcher(None, word, w).ratio()
+        if similarity >= threshold:
+            return True
+    return False
 
 
 def detect_module_from_input(user_input: str) -> str:
     """
-    Detect which DSA module should handle the user query,
-    based on keyword matching.
-    Returns the module name (string) or None if no match.
+    Detect module using:
+    1. Priority list
+    2. Exact keyword match
+    3. Fuzzy match for typos
     """
 
-    text = user_input.lower()  # convert to lowercase for matching
+    text = user_input.lower()
 
-    for module, keywords in MODULE_KEYWORDS.items():
-        for kw in keywords:
+    for module in MODULE_PRIORITY:
+        for kw in MODULE_KEYWORDS[module]:
+            # First try exact match
             if kw in text:
-                return module  # first match found
+                return module
 
-    return None  # no module matched
+            # Then try fuzzy match for misspellings
+            if fuzzy_match(kw, text):
+                return module
 
+    return None
 
 def parse_input(user_input: str) -> dict:
     """
@@ -96,11 +124,44 @@ def parse_input(user_input: str) -> dict:
         return result
 
     # STEP 2 — detect the exact operation keyword
-    # This searches for the keyword inside the chosen module
+    # This searches for the keyword inside the chosen modu
+    # le
     user_text = user_input.lower()
+    # STEP 2 — detect operation keyword (exact OR fuzzy)
     for keyword in MODULE_KEYWORDS[module]:
+    # Exact match first
         if keyword in user_text:
             result["operation"] = keyword
             break
 
+    # Fuzzy match as backup
+        if fuzzy_match(keyword, user_text):
+            result["operation"] = keyword
+            break
+
+
+
+
+
+
     return result
+
+if __name__ == "__main__":
+    #test Queries 
+    tests = [
+
+        "Sort 1000 numbers fast", 
+        "Find the shortespath in this graph", 
+        "Use knapsacs to solve this problem",
+        "Schedule maximum tasks",
+        "Insert into linked list",
+        "Find subset exists"
+        "search using the hash map",
+        "Push in a stack"
+        "Binary search example",
+        "Closest pair of points"
+
+    ] 
+
+    for t in tests:
+        print(t, "->", parse_input(t))
