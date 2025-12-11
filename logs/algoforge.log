@@ -1,0 +1,36 @@
+2025-12-10 20:21:54,006 | WARNING | backend.llm_service | LLM call failed: 404 Client Error: Not Found for url: http://localhost:11434/v1/generate
+2025-12-10 21:39:59,621 | WARNING | backend.llm_service | LLM call failed: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=30)
+2025-12-10 23:17:42,342 | WARNING | backend.llm_service | LLM sync call failed: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=3)
+2025-12-10 23:18:59,558 | WARNING | backend.llm_service | LLM sync call failed: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=3)
+2025-12-10 23:33:33,461 | WARNING | backend.llm_service | LLM sync call failed: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=3)
+2025-12-10 23:37:12,993 | WARNING | backend.llm_service | LLM sync call failed: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=3)
+2025-12-10 23:45:34,532 | WARNING | backend.llm_service | LLM sync call failed: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=3)
+2025-12-10 23:48:06,583 | WARNING | backend.llm_service | LLM sync call failed: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=3)
+2025-12-11 00:26:59,964 | ERROR   | backend.ai_brain | LLM call error: '\n  "module"'
+Traceback (most recent call last):
+  File "D:\AlgoForge\backend\ai_brain.py", line 36, in ai_parse
+    raw = await asyncio.wait_for(llm_understand(user_text), timeout=timeout)
+  File "D:\Users\DELL\anaconda3\envs\deeplearn\lib\asyncio\tasks.py", line 445, in wait_for
+    return fut.result()
+  File "D:\AlgoForge\backend\llm_service.py", line 73, in llm_understand
+    prompt = PROMPT_TEMPLATE.format(user_input=user_input)
+KeyError: '\n  "module"'
+2025-12-11 00:36:02,825 | ERROR   | backend.ai_brain | LLM call error: '\n  "module"'
+Traceback (most recent call last):
+  File "D:\AlgoForge\backend\ai_brain.py", line 36, in ai_parse
+    raw = await asyncio.wait_for(llm_understand(user_text), timeout=timeout)
+  File "D:\Users\DELL\anaconda3\envs\deeplearn\lib\asyncio\tasks.py", line 445, in wait_for
+    return fut.result()
+  File "D:\AlgoForge\backend\llm_service.py", line 73, in llm_understand
+    prompt = PROMPT_TEMPLATE.format(user_input=user_input)
+KeyError: '\n  "module"'
+2025-12-11 00:36:09,825 | ERROR   | backend.ai_brain | LLM call error: '\n  "module"'
+Traceback (most recent call last):
+  File "D:\AlgoForge\backend\ai_brain.py", line 36, in ai_parse
+    raw = await asyncio.wait_for(llm_understand(user_text), timeout=timeout)
+  File "D:\Users\DELL\anaconda3\envs\deeplearn\lib\asyncio\tasks.py", line 445, in wait_for
+    return fut.result()
+  File "D:\AlgoForge\backend\llm_service.py", line 73, in llm_understand
+    prompt = PROMPT_TEMPLATE.format(user_input=user_input)
+KeyError: '\n  "module"'
+2025-12-11 00:50:15,669 | ERROR   | backend.llm_service | Ollama request failed: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=25)
